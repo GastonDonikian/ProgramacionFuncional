@@ -1,0 +1,27 @@
+Ejercicio 3)
+Definiciones Previas:
+curry f x y = f(x, y)
+suma' (x, y) = x + y
+suma x y = x + y
+
+Proposicion:
+curry suma' = suma
+Por principio de extensionaliad es equiv
+Para todo x. para todo y. curry suma' x y = suma x y
+
+Demostracion
+Lado Derecho
+suma x y
+=               def. suma
+x + y
+Lado Izqueirdo
+curry suma' x y
+=               def. curry
+suma' (x, y)
+=               def. suma'
+x + y
+
+Proposicion II)
+uncurry suma = suma' ??
+Por principio de extensionalidad es equiv
+Para todo x. para todo y. uncurry suma = suma' ??

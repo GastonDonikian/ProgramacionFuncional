@@ -1,0 +1,38 @@
+-- ejercicio 1)
+a)
+Proposicion: doble = \x -> 2 * x  -?
+Por Principio de extensionalidad es equiv:
+Proposicion: para todo x. doble x - (\x -> 2 * x) x - ?
+
+Demostracion:
+Lado Izquierdo)
+doble x
+=		def. doble
+x + x
+=		def. aritmetica
+2 * x
+Lado Derecho
+(\x -> 2 * x) x
+=		def. Beta reduccion
+2 * x
+
+b)
+Proposicion: compose doble doble = cuadruple
+Por principio de extensionalidad es equiv:
+Prop: Para todo x. compose doble doble x = cuadruple x
+
+Demo:
+Lado Derecho)
+cuadruple x
+=		def. cuadruple
+4 * x
+Lado Izquierdo)
+compose doble doble x
+= 	        def. compose (f = doble, g = doble, x = x)
+doble (doble x)
+=		def. doble, x = x
+doble (2 * x)
+=               def. doble, x = 2 * x
+2 * (2 * x)
+=               def. aritmetica
+4 * x

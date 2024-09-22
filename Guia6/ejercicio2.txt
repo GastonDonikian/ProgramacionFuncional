@@ -1,0 +1,60 @@
+Ejercicio 2)
+a)
+Proposicion: para todo x. para todo y. x && y = not ((not x) || (not y))
+
+Veamos por casos:
+C1) X = False
+Lado Izquierdo)
+False && y
+=		def. &&
+False
+Lado Derecho
+not ((not False) || (not y))
+               def. not
+not (True || (not y))
+=   	     	  def. ||
+not True
+=		  def. not
+False
+C2) Y = False, es analogo pues && ^ || son asociativos
+
+C3) X = True, Y = True
+Lado Izquierdo
+True && True
+=		def. &&
+True
+
+Lado Derecho
+not ((not True) || (not True))
+=   	  	def. not
+not (False || False)
+=		def. ||
+not False
+=		def. not
+
+---
+
+Proposicion: Para todo x. para todo y. not (x || y) = not x && not y
+C1) X o Y = True
+Lado Izquierdo:
+not (True || y)
+=		def. ||
+not True
+=		def. not
+False
+Lado Derecho:
+not True && not y
+=   	    	def. not ^ &&
+False
+
+C2) X & Y = False
+Lado Izquierdo:
+not (False || False)
+=   	      def. || ^ not
+True
+Lado Derecho:
+not False && not False
+=   	     def. not ^ &&
+True
+
+
