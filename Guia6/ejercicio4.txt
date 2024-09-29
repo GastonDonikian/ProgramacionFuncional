@@ -1,0 +1,7 @@
+Ejercicio 4) Demostrar las siguientes propiedades:
+
+a)
+Proposicion: curry fst = const ?
+Por principio de extensionalidad es equivalente
+Proposicion: para todo x. curry fst x = const x ?
+Por principio de extensionalidad es equivalente
