@@ -104,10 +104,64 @@
 ;; 8
 
 ;; Exercise 1.10: Ackermann
-
 (define (A x y)
   (cond ((= y 0) 0)
 	((= x 0) (* 2 y))
 	((= y 1) 2)
 	(else (A (- x 1)
 		 (A x (- y 1))))))
+
+;; Exercise 1.11
+;; RECURSIVE PROCESS
+(define (f n)
+  (cond ((< n 3) n)
+	(else (+
+	       (f (- n 1))
+	       (* 2 (f (- n 2)))
+	       (* 3 (f (- n 3)))))))
+
+;; ITERATIVE PROCESS
+(define (f n)
+  (f-iter 2 1 0 n)
+
+;; a = f(n - 1)
+;; b = f(n - 2)
+;; c = f(n - 3)
+
+(define (f-iter a b c count)
+  (if (= count 0)
+      a
+      (f-iter (+ a (* 2 b) (* 3 c)) a b (- count 1))))
+
+;; Exercise 1.12: Pascal
+;; Reformatting for clarity to:
+;; 1
+;; 1 1
+;; 1 2 1
+;; 1 3 3 1
+;; 1 4 6 4 1
+
+(define (pascal row col)
+  (cond ((= col 0) 1)
+	((= col row) 1)
+	(else (+ (pascal (- row 1) (- col 1))
+		 (pascal (- row 1) col)))))
+
+;; Exercise 1.13: Made on paper (-ish)
+
+;; Exercise 1.14:It's a drawing
+
+;; Exercise 1.15:
+
+(define (cube x) (* x x x))
+
+(define (p x) (- (* 3 x) (* 4 (cube x))))
+
+(define (sine angle)
+  (if (not (> (abs angle) 0.1))
+      angle
+      (p (sine (/ angle 3.0)))))
+;; a) 6 veces
+;; b) 
+      
+  
